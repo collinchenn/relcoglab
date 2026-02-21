@@ -99,9 +99,9 @@ class RSA:
 
         with open(file_name, 'r') as f:
             for line in f:
-                pair_1, pair_2, similiarity_score = line.split()
+                pair_1, pair_2, similarity_score = line.split()
                 pair_similarities[(pair_1.split('#', 1)[0], 
-                                   pair_2.split('#', 1)[0])] = float(similiarity_score)
+                                   pair_2.split('#', 1)[0])] = float(similarity_score)
 
         # Normalize the pairs
         return {k: round(v/10, 3) for k, v in pair_similarities.items()}
